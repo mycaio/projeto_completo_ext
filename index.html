@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disponibility - Agendamento Simplificado</title>
+    <title>LIGA JÁ - Seu App de Socorro</title>
     
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts: Inter -->
@@ -13,264 +13,240 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Feather Icons -->
-    <script src="https://unpkg.com/feather-icons"></script>
-
+    <!-- Custom CSS for theme and animations -->
     <style>
-        /* Estilo para a fonte Inter */
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Fundo escuro */
+            color: #F3F4F6; /* Texto claro */
         }
-        /* Efeito de gradiente animado para o fundo do hero */
-        .animated-gradient {
-            background: linear-gradient(-45deg, #4f46e5, #7c3aed, #22d3ee, #3b82f6);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
+        .text-gradient {
+            background: linear-gradient(90deg, #A78BFA, #F472B6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .bg-gradient-custom {
+             background: linear-gradient(90deg, #A78BFA, #F472B6);
+        }
+        .section {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+        .section-title {
+            @apply text-3xl font-bold text-center mb-2 text-gradient;
+        }
+        .section-subtitle {
+            @apply text-center text-gray-400 mb-12;
+        }
+        .card {
+            @apply bg-gray-800 p-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105;
+        }
+        .nav-link {
+            @apply text-gray-300 hover:text-white transition duration-300 text-sm font-medium;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="antialiased">
 
-    <!-- Cabeçalho -->
-    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm">
+    <!-- HEADER -->
+    <header id="header" class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-indigo-600">Disponibility</a>
-            <nav class="hidden md:flex space-x-8 items-center">
-                <a href="#sobre" class="text-gray-600 hover:text-indigo-600 transition-colors">Sobre</a>
-                <a href="#equipe" class="text-gray-600 hover:text-indigo-600 transition-colors">Equipe</a>
-                <a href="#projeto" class="text-gray-600 hover:text-indigo-600 transition-colors">O Projeto</a>
-                <a href="#impacto" class="text-gray-600 hover:text-indigo-600 transition-colors">Impacto Social</a>
-                <!-- <a href="#contato" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-transform hover:scale-105 shadow">Quero Saber Mais</a> -->
+            <a href="#home" class="text-2xl font-bold text-gradient">LIGA JÁ</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#missao" class="nav-link">Nossa Missão</a>
+                <a href="#equipe" class="nav-link">Nossa Equipe</a>
+                <a href="#projeto" class="nav-link">O Projeto</a>
+                <a href="#impacto" class="nav-link">Impacto Social</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden">
-                <i data-feather="menu" class="text-gray-700"></i>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
-        <!-- Menu Mobile -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="#sobre" class="block py-2 text-gray-600 hover:text-indigo-600">Sobre</a>
-            <a href="#equipe" class="block py-2 text-gray-600 hover:text-indigo-600">Equipe</a>
-            <a href="#projeto" class="block py-2 text-gray-600 hover:text-indigo-600">O Projeto</a>
-            <a href="#impacto" class="block py-2 text-gray-600 hover:text-indigo-600">Impacto Social</a>
-           <!-- <a href="#contato" class="block mt-2 bg-indigo-600 text-white text-center px-4 py-2 rounded-lg hover:bg-indigo-700 shadow">Quero Saber Mais</a> -->
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#home" class="block py-2 px-6 text-sm nav-link">Home</a>
+            <a href="#missao" class="block py-2 px-6 text-sm nav-link">Nossa Missão</a>
+            <a href="#equipe" class="block py-2 px-6 text-sm nav-link">Nossa Equipe</a>
+            <a href="#projeto" class="block py-2 px-6 text-sm nav-link">O Projeto</a>
+            <a href="#impacto" class="block py-2 px-6 text-sm nav-link">Impacto Social</a>
         </div>
     </header>
 
     <main>
-        <!-- Seção Hero -->
-        <section class="pt-32 pb-20 animated-gradient text-white">
+        <!-- HOME SECTION -->
+        <section id="home" class="min-h-screen flex items-center justify-center bg-gray-900 bg-cover bg-center" style="background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('https://placehold.co/1920x1080/111827/374151?text=');">
+            <div class="text-center px-6">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+                    Um toque de segurança disfarçado de normalidade.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+                    Seu app de socorro rápido e discreto.
+                </p>
+                <a href="#projeto" class="mt-8 inline-block bg-gradient-custom text-white font-bold py-3 px-8 rounded-full transition-transform duration-300 hover:scale-110">
+                    Saiba Mais
+                </a>
+            </div>
+        </section>
+
+        <!-- NOSSA MISSÃO SECTION -->
+        <section id="missao" class="section bg-gray-800 border-t border-gray-700">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Nossa Missão</h2>
+                <p class="section-subtitle">O que nos move e onde queremos chegar.</p>
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div class="card bg-gray-900 p-6">
+                        <h3 class="text-2xl font-bold mb-4 text-white">Sobre Nós</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Somos uma equipe de 5 estudantes de Engenharia de Software apaixonados por tecnologia e impacto social. Acreditamos que a segurança da mulher é uma pauta urgente e que podemos usar nossas habilidades para criar soluções inovadoras e eficazes que ofereçam uma camada extra de proteção no dia a dia.
+                        </p>
+                    </div>
+                    <div class="card bg-gray-900 p-6">
+                        <h3 class="text-2xl font-bold mb-4 text-white">Nosso Objetivo</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Temos o objetivo de ajudar as mulheres a se sentirem mais seguras, fornecendo uma ferramenta discreta e poderosa para situações de perigo iminente. Queremos reduzir o tempo de resposta em emergências e criar uma rede de apoio confiável através da tecnologia, empoderando mulheres para que vivam com mais liberdade e menos medo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOSSA EQUIPE SECTION -->
+        <section id="equipe" class="section bg-gray-900 border-t border-gray-700">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Nossa Equipe</h2>
+                <p class="section-subtitle">As mentes por trás do projeto LIGA JÁ.</p>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
+                    <!-- Team Member 1 -->
+                    <div class="text-center text-gray-300">
+                        <img src="https://placehold.co/200x200/374151/A78BFA?text=Foto" alt="Foto do integrante 1" class="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-violet-400 object-cover">
+                        <h4 class="font-bold text-lg text-white">Nome do Integrante</h4>
+                        <p class="text-sm">Eng. de Software</p>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div class="text-center text-gray-300">
+                        <img src="https://placehold.co/200x200/374151/A78BFA?text=Foto" alt="Foto do integrante 2" class="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-violet-400 object-cover">
+                        <h4 class="font-bold text-lg text-white">Nome do Integrante</h4>
+                        <p class="text-sm">Eng. de Software</p>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="text-center text-gray-300">
+                        <img src="https://placehold.co/200x200/374151/A78BFA?text=Foto" alt="Foto do integrante 3" class="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-violet-400 object-cover">
+                        <h4 class="font-bold text-lg text-white">Nome do Integrante</h4>
+                        <p class="text-sm">Eng. de Software</p>
+                    </div>
+                    <!-- Team Member 4 -->
+                    <div class="text-center text-gray-300">
+                        <img src="https://placehold.co/200x200/374151/A78BFA?text=Foto" alt="Foto do integrante 4" class="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-violet-400 object-cover">
+                        <h4 class="font-bold text-lg text-white">Nome do Integrante</h4>
+                        <p class="text-sm">Eng. de Software</p>
+                    </div>
+                    <!-- Team Member 5 -->
+                    <div class="text-center text-gray-300">
+                        <img src="https://placehold.co/200x200/374151/A78BFA?text=Foto" alt="Foto do integrante 5" class="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-violet-400 object-cover">
+                        <h4 class="font-bold text-lg text-white">Nome do Integrante</h4>
+                        <p class="text-sm">Eng. de Software</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE O PROJETO SECTION -->
+        <section id="projeto" class="section bg-gray-800 border-t border-gray-700">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Sobre o Projeto</h2>
+                <p class="section-subtitle">Entenda como o LIGA JÁ funciona para te proteger.</p>
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="md:w-1/2">
+                         <img src="https://placehold.co/600x400/1F2937/A78BFA?text=App+Screenshot" alt="Demonstração do App" class="rounded-xl shadow-2xl">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold mb-4 text-white">Discrição e Rapidez</h3>
+                        <p class="text-gray-300 mb-6">
+                            O LIGA JÁ é um aplicativo mobile que funciona disfarçado como uma calculadora comum. Essa interface familiar garante que o pedido de ajuda possa ser feito de forma discreta, sem levantar suspeitas em uma situação de risco.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-violet-500/20 text-violet-400 p-2 rounded-full mr-4">
+                                   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Chamada de Emergência Imediata</h4>
+                                    <p class="text-gray-400">Um cálculo pré-definido (ex: 190 + =) realiza uma ligação instantânea para a polícia (190), sem necessidade de confirmações adicionais.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                 <div class="bg-violet-500/20 text-violet-400 p-2 rounded-full mr-4">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Alertas Personalizáveis</h4>
+                                    <p class="text-gray-400">A usuária pode configurar outros cálculos para ligar para números de confiança (familiares, amigos) ou acionar outros serviços de emergência.</p>
+                                </div>
+                            </div>
+                             <div class="flex items-start">
+                                 <div class="bg-violet-500/20 text-violet-400 p-2 rounded-full mr-4">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Mensagem de Socorro via WhatsApp</h4>
+                                    <p class="text-gray-400">Configure uma lista de contatos de emergência. Ao digitar um cálculo específico, o app envia uma mensagem personalizada via WhatsApp para todos da lista, contendo um pedido de ajuda e a localização em tempo real.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMPACTO SOCIAL SECTION -->
+        <section id="impacto" class="section bg-gray-900 border-t border-gray-700">
             <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">Simplifique sua agenda, conecte-se com seus clientes.</h1>
-                <p class="text-lg md:text-xl max-w-3xl mx-auto text-indigo-100 mb-8">A ferramenta de agendamento que trabalha por você, permitindo que você foque no que realmente importa: o seu serviço. Grátis.</p>
-                <!--<a href="#contato" class="bg-white text-indigo-600 font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-100 transition-transform hover:scale-105 shadow-2xl inline-block">Comece a usar gratuitamente</a>-->
+                 <h2 class="section-title">Impacto Social</h2>
+                 <p class="section-subtitle">Como o LIGA JÁ pode transformar realidades.</p>
+                 <div class="max-w-3xl mx-auto bg-gray-800 p-8 rounded-xl shadow-lg">
+                    <p class="text-gray-300 leading-relaxed text-left md:text-center">
+                        A violência contra a mulher é um problema grave e complexo. O LIGA JÁ atua como uma ferramenta de prevenção e resposta rápida, empoderando mulheres com um recurso que pode ser crucial em momentos de vulnerabilidade. Ao oferecer uma forma discreta de pedir ajuda, o aplicativo quebra barreiras como o medo de ser descoberta pelo agressor. Nosso projeto visa não apenas oferecer uma solução tecnológica, mas também promover a conscientização sobre a importância de redes de apoio e da segurança feminina, contribuindo para uma sociedade mais justa e segura para todas.
+                    </p>
+                 </div>
             </div>
         </section>
 
-        <!-- Seção Sobre Nós -->
-        <section id="sobre" class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Nossa Missão</h2>
-                    <p class="text-lg text-gray-600 mt-2 max-w-2xl mx-auto">Tecnologia acessível, intuitiva e poderosa para todos.</p>
-                </div>
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-                        <h3 class="text-2xl font-semibold mb-4 text-indigo-600 flex items-center"><i data-feather="users" class="mr-3"></i> Sobre Nós</h3>
-                        <p class="text-gray-600 leading-relaxed">Somos uma equipe de cinco estudantes de TI apaixonados por inovação. Acreditamos que a tecnologia deve ser uma aliada para todos, especialmente para os pequenos negócios. Unimos nosso conhecimento para criar ferramentas que geram impacto real, simplificam processos e abrem portas para o crescimento.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-                        <h3 class="text-2xl font-semibold mb-4 text-indigo-600 flex items-center"><i data-feather="target" class="mr-3"></i> Nosso Objetivo</h3>
-                        <p class="text-gray-600 leading-relaxed">Nosso principal objetivo é fortalecer o microempreendedorismo no Brasil. Queremos eliminar as barreiras tecnológicas que muitos enfrentam, oferecendo uma plataforma gratuita e eficiente para proporcionar mais organização, profissionalismo e tempo livre para que possam prosperar.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção Nossa Equipe -->
-        <section id="equipe" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Nossa Equipe</h2>
-                    <p class="text-lg text-gray-600 mt-2 max-w-2xl mx-auto">As mentes por trás do Disponibility.</p>
-                </div>
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-12">
-                    <!-- Card Membro 1 -->
-                    <div class="text-center">
-                        <img src="IMG/Foto_caio.jpeg" alt="Foto do membro da equipe" class="w-32 h-32 mx-auto rounded-full shadow-lg object-cover border-4 border-white">
-                        <h3 class="mt-4 text-xl font-semibold text-gray-800">CAIO MENDONCA</h3>
-                        <p class="text-indigo-600">ENGENHARIA DE SOFTWARE</p>
-                    </div>
-                    <!-- Card Membro 2 -->
-                    <div class="text-center">
-                        <img src="IMG/mateus.jpeg" alt="Foto do membro da equipe" class="w-32 h-32 mx-auto rounded-full shadow-lg object-cover border-4 border-white">
-                        <h3 class="mt-4 text-xl font-semibold text-gray-800">MATEUS PRADO</h3>
-                        <p class="text-indigo-600">ENGENHARIA DE SOFTWARE</p>
-                    </div>
-                    <!-- Card Membro 3 -->
-                    <div class="text-center">
-                        <img src="IMG/vitor.jpeg" alt="Foto do membro da equipe" class="w-32 h-32 mx-auto rounded-full shadow-lg object-cover border-4 border-white">
-                        <h3 class="mt-4 text-xl font-semibold text-gray-800">VITOR VITAL</h3>
-                        <p class="text-indigo-600">ENGENHARIA DE SOFTWARE</p>
-                    </div>
-                    <!-- Card Membro 4 -->
-                    <div class="text-center">
-                        <img src="IMG/mit.jpeg" alt="Foto do membro da equipe" class="w-32 h-32 mx-auto rounded-full shadow-lg object-cover border-4 border-white">
-                        <h3 class="mt-4 text-xl font-semibold text-gray-800">MITSUO NAKAMURA</h3>
-                        <p class="text-indigo-600">ENGENHARIA DE SOFTWARE</p>
-                    </div>
-                    <!-- Card Membro 5 -->
-                    <div class="text-center">
-                        <img src="IMG/pedro.jpeg" alt="Foto do membro da equipe" class="w-32 h-32 mx-auto rounded-full shadow-lg object-cover border-4 border-white">
-                        <h3 class="mt-4 text-xl font-semibold text-gray-800">PEDRO BUENO</h3>
-                        <p class="text-indigo-600">ENGENHARIA DE SOFTWARE</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-         <!-- Seção Sobre o Projeto -->
-        <section id="projeto" class="py-20 bg-gray-100">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Sobre o Projeto</h2>
-                    <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto leading-relaxed">O Diponibility é um aplicativo de agendamento de serviços projetado para ser genérico e adaptável a qualquer negócio que dependa de horários marcados. Seja você um barbeiro, manicure, dono de lava-rápido, personal trainer ou qualquer outro profissional, nossa plataforma foi feita para você.</p>
-                </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-                    <!-- Card 1 -->
-                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
-                        <div class="text-indigo-500 mb-4"><i data-feather="calendar" class="w-10 h-10"></i></div>
-                        <h3 class="text-xl font-semibold mb-2">Agenda Completa</h3>
-                        <p class="text-gray-600">Visualize todos os seus agendamentos de forma clara e organizada.</p>
-                    </div>
-                    <!-- Card 2 -->
-                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
-                        <div class="text-indigo-500 mb-4"><i data-feather="clock" class="w-10 h-10"></i></div>
-                        <h3 class="text-xl font-semibold mb-2">Gestão de Horários</h3>
-                        <p class="text-gray-600">Edite sua disponibilidade, bloqueie horários e defina seus dias de trabalho.</p>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
-                        <div class="text-indigo-500 mb-4"><i data-feather="user-plus" class="w-10 h-10"></i></div>
-                        <h3 class="text-xl font-semibold mb-2">Adição Manual</h3>
-                        <p class="text-gray-600">Inclua agendamentos feitos por telefone ou presencialmente com flexibilidade.</p>
-                    </div>
-                    <!-- Card 4 -->
-                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
-                        <div class="text-indigo-500 mb-4"><i data-feather="link" class="w-10 h-10"></i></div>
-                        <h3 class="text-xl font-semibold mb-2">Link Exclusivo</h3>
-                        <p class="text-gray-600">Ofereça um link para seus clientes agendarem sozinhos, a qualquer hora.</p>
-                    </div>
-                </div>
-                <div class="mt-12 text-center bg-indigo-100 text-indigo-800 p-6 rounded-lg">
-                    <p class="font-semibold">Integração com WhatsApp em análise para automatizar lembretes e confirmações!</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção Impacto Social -->
-        <section id="impacto" class="py-20">
-            <div class="container mx-auto px-6">
-                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Nosso Compromisso Social</h2>
-                    <p class="text-lg text-gray-600 mt-2 max-w-2xl mx-auto">Democratizando o acesso a ferramentas de gestão para microempreendedores.</p>
-                </div>
-                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-green-100 text-green-600 p-3 rounded-full"><i data-feather="dollar-sign"></i></div>
-                        <div>
-                            <h3 class="text-xl font-semibold">Tecnologia sem Custo</h3>
-                            <p class="text-gray-600 mt-1">Oferecemos nossa ferramenta de ponta gratuitamente para apoiar quem está começando.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-green-100 text-green-600 p-3 rounded-full"><i data-feather="bar-chart-2"></i></div>
-                        <div>
-                            <h3 class="text-xl font-semibold">Aumento da Competitividade</h3>
-                            <p class="text-gray-600 mt-1">Ajudamos pequenos negócios a oferecer uma experiência moderna e eficiente.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-green-100 text-green-600 p-3 rounded-full"><i data-feather="cpu"></i></div>
-                        <div>
-                            <h3 class="text-xl font-semibold">Redução da Carga Administrativa</h3>
-                            <p class="text-gray-600 mt-1">Automatize agendamentos e ganhe mais tempo para focar no seu serviço.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-green-100 text-green-600 p-3 rounded-full"><i data-feather="globe"></i></div>
-                        <div>
-                            <h3 class="text-xl font-semibold">Promoção da Inclusão Digital</h3>
-                            <p class="text-gray-600 mt-1">Capacitamos profissionais com uma solução digital simples e poderosa.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção Call to Action 
-        <section id="contato" class="bg-indigo-700 text-white">
-            <div class="container mx-auto px-6 py-20 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Interessado em transformar a gestão do seu negócio?</h2>
-                <p class="text-indigo-200 text-lg max-w-2xl mx-auto mb-8">Deixe seu e-mail abaixo para ser o primeiro a saber do nosso lançamento e receber acesso antecipado!</p>
-                
-                <form id="cta-form" class="max-w-lg mx-auto flex flex-col sm:flex-row gap-4">
-                    <input type="email" id="email-input" placeholder="Seu melhor e-mail" required class="w-full px-5 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
-                    <button type="submit" class="bg-white text-indigo-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-transform hover:scale-105 shadow-lg">QUERO SABER MAIS</button>
-                </form>
-                <p id="form-message" class="mt-4 h-6"></p>
-            </div>
-        </section>-->
     </main>
 
-    <!-- Rodapé -->
-    <footer class="bg-gray-800 text-gray-400">
-        <div class="container mx-auto px-6 py-8">
-            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-                <div class="mb-4 md:mb-0">
-                    <p class="font-bold text-lg text-white">Disponibility</p>
-                    <p class="text-sm">&copy; 2025 Projeto de Extensão. Todos os direitos reservados.</p>
-                </div>
-                <div class="flex items-center">
-                    <img src="IMG/Unifil.jpg" alt="Logo da instituição de ensino" class="h-12 mr-4 rounded-lg">
-                    <p class="text-sm">Projeto desenvolvido para <br class="sm:hidden"><strong>UniFil</strong></p>
-                </div>
-            </div>
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 border-t border-gray-700">
+        <div class="container mx-auto px-6 py-6 text-center text-gray-400 flex flex-col sm:flex-row justify-between items-center">
+             <p class="text-sm mb-4 sm:mb-0">&copy; 2025 Projeto de Extensão LIGA JÁ. Todos os direitos reservados.</p>
+             <div class="flex items-center space-x-4">
+                <span class="text-sm">Apoio:</span>
+                <img src="https://placehold.co/150x50/F3F4F6/111827?text=Logo+Faculdade" alt="Logo da Faculdade" class="h-8">
+             </div>
         </div>
     </footer>
 
+    <!-- JAVASCRIPT -->
     <script>
-        // Ativa os ícones do Feather Icons
-        feather.replace();
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('#mobile-menu a, #header nav a');
 
-        // Lógica para o menu mobile
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Lógica para o formulário de contato
-        const ctaForm = document.getElementById('cta-form');
-        const emailInput = document.getElementById('email-input');
-        const formMessage = document.getElementById('form-message');
+            // Toggle mobile menu
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
 
-        ctaForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Simulação de envio
-            formMessage.textContent = 'Obrigado! Avisaremos você em breve.';
-            formMessage.classList.add('text-green-300');
-            emailInput.value = '';
-
-            setTimeout(() => {
-                formMessage.textContent = '';
-                formMessage.classList.remove('text-green-300');
-            }, 5000);
+            // Close mobile menu when a link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
         });
     </script>
 </body>
 </html>
+
