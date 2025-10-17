@@ -23,6 +23,7 @@
         .text-gradient {
             background: linear-gradient(90deg, #A78BFA, #F472B6);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .bg-gradient-custom {
@@ -32,18 +33,54 @@
             padding-top: 5rem;
             padding-bottom: 5rem;
         }
+        /* Center section headers and make h2 bolder */
+        .section-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* center horizontally */
+            justify-content: center; /* center vertically if needed */
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .section-header h2,
+        .section-header .section-title {
+            font-weight: 800; /* bolder */
+        }
+        .section-header p,
+        .section-header .section-subtitle {
+            max-width: 72ch;
+        }
         .section-title {
-            @apply text-3xl font-bold text-center mb-2 text-gradient;
+            font-size: 1.75rem; /* approx text-3xl */
+            line-height: 1.2;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #A78BFA, #F472B6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .section-subtitle {
-            @apply text-center text-gray-400 mb-12;
+            text-align: center;
+            color: #9CA3AF; /* text-gray-400 */
+            margin-bottom: 3rem;
         }
         .card {
-            @apply bg-gray-800 p-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105;
+            background-color: #1F2937; /* bg-gray-800 */
+            padding: 1.5rem; /* p-6 */
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.4), 0 4px 6px -2px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
         }
+        .card:hover { transform: scale(1.05); }
         .nav-link {
-            @apply text-gray-300 hover:text-white transition duration-300 text-sm font-medium;
+            color: #D1D5DB; /* text-gray-300 */
+            transition: color 0.3s;
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500;
+            text-decoration: none;
         }
+        .nav-link:hover { color: #ffffff; }
     </style>
 </head>
 <body class="antialiased">
@@ -92,8 +129,10 @@
         <!-- NOSSA MISSÃO SECTION -->
         <section id="missao" class="section bg-gray-800 border-t border-gray-700">
             <div class="container mx-auto px-6">
-                <h2 class="section-title">Nossa Missão</h2>
-                <p class="section-subtitle">O que nos move e onde queremos chegar.</p>
+                <div class="section-header">
+                    <h2 class="section-title">Nossa Missão</h2>
+                    <p class="section-subtitle">O que nos move e onde queremos chegar.</p>
+                </div>
                 <div class="grid md:grid-cols-2 gap-10">
                     <div class="card bg-gray-900 p-6">
                         <h3 class="text-2xl font-bold mb-4 text-white">Sobre Nós</h3>
@@ -114,8 +153,10 @@
         <!-- NOSSA EQUIPE SECTION -->
         <section id="equipe" class="section bg-gray-900 border-t border-gray-700">
             <div class="container mx-auto px-6">
-                <h2 class="section-title">Nossa Equipe</h2>
-                <p class="section-subtitle">As mentes por trás do projeto LIGA JÁ.</p>
+                <div class="section-header">
+                    <h2 class="section-title">Nossa Equipe</h2>
+                    <p class="section-subtitle">As mentes por trás do projeto LIGA JÁ.</p>
+                </div>
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
                     <!-- Team Member 1 -->
                     <div class="text-center text-gray-300">
@@ -154,8 +195,10 @@
         <!-- SOBRE O PROJETO SECTION -->
         <section id="projeto" class="section bg-gray-800 border-t border-gray-700">
             <div class="container mx-auto px-6">
-                <h2 class="section-title">Sobre o Projeto</h2>
-                <p class="section-subtitle">Entenda como o LIGA JÁ funciona para te proteger.</p>
+                <div class="section-header">
+                    <h2 class="section-title">Sobre o Projeto</h2>
+                    <p class="section-subtitle">Entenda como o LIGA JÁ funciona para te proteger.</p>
+                </div>
                 <div class="flex flex-col md:flex-row items-center gap-10">
                     <div class="md:w-1/2">
                          <img src="https://placehold.co/600x400/1F2937/A78BFA?text=App+Screenshot" alt="Demonstração do App" class="rounded-xl shadow-2xl">
@@ -202,8 +245,10 @@
         <!-- IMPACTO SOCIAL SECTION -->
         <section id="impacto" class="section bg-gray-900 border-t border-gray-700">
             <div class="container mx-auto px-6 text-center">
-                 <h2 class="section-title">Impacto Social</h2>
-                 <p class="section-subtitle">Como o LIGA JÁ pode transformar realidades.</p>
+                 <div class="section-header">
+                     <h2 class="section-title">Impacto Social</h2>
+                     <p class="section-subtitle">Como o LIGA JÁ pode transformar realidades.</p>
+                 </div>
                  <div class="max-w-3xl mx-auto bg-gray-800 p-8 rounded-xl shadow-lg">
                     <p class="text-gray-300 leading-relaxed text-left md:text-center">
                         A violência contra a mulher é um problema grave e complexo. O LIGA JÁ atua como uma ferramenta de prevenção e resposta rápida, empoderando mulheres com um recurso que pode ser crucial em momentos de vulnerabilidade. Ao oferecer uma forma discreta de pedir ajuda, o aplicativo quebra barreiras como o medo de ser descoberta pelo agressor. Nosso projeto visa não apenas oferecer uma solução tecnológica, mas também promover a conscientização sobre a importância de redes de apoio e da segurança feminina, contribuindo para uma sociedade mais justa e segura para todas.
