@@ -60,6 +60,16 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        .section-descr-mvp {
+            font-size: 1.75rem; /* approx text-3xl */
+            line-height: 1.2;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #ffffff, #f6f6f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
         .section-subtitle {
             text-align: center;
             color: #9CA3AF; /* text-gray-400 */
@@ -90,12 +100,7 @@
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="text-2xl font-bold text-gradient">LIGA JÁ</a>
             <nav class="hidden md:flex space-x-8">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#missao" class="nav-link">Nossa Missão</a>
-                <a href="#equipe" class="nav-link">Nossa Equipe</a>
-                <a href="#projeto" class="nav-link">O Projeto</a>
-                <a href="#impacto" class="nav-link">Impacto Social</a>
-                <a href="docs.html" class="nav-link">Documentação</a>
+                <a href="index.html" class="nav-link">Home</a>              
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -103,17 +108,12 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#home" class="block py-2 px-6 text-sm nav-link">Home</a>
-            <a href="#missao" class="block py-2 px-6 text-sm nav-link">Nossa Missão</a>
-            <a href="#equipe" class="block py-2 px-6 text-sm nav-link">Nossa Equipe</a>
-            <a href="#projeto" class="block py-2 px-6 text-sm nav-link">O Projeto</a>
-            <a href="#impacto" class="block py-2 px-6 text-sm nav-link">Impacto Social</a>
-            <a href="docs.html" class="block py-2 px-6 text-sm nav-link">Documentação</a>
+            <a href="index.html" class="block py-2 px-6 text-sm nav-link">Home</a>
         </div>
     </header>
 
     <main>
-        <!-- HOME SECTION -->
+        <!-- HOME SECTION 
         <section id="home" class="min-h-screen flex items-center justify-center bg-gray-900 bg-cover bg-center" style="background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('https://placehold.co/1920x1080/111827/374151?text=');">
             <div class="text-center px-6">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
@@ -126,9 +126,9 @@
                     Saiba Mais
                 </a>
             </div>
-        </section>
+        </section>-->
 
-        <!-- NOSSA MISSÃO SECTION -->
+        <!-- NOSSA MISSÃO SECTION 
         <section id="missao" class="section bg-gray-800 border-t border-gray-700">
             <div class="container mx-auto px-6">
                 <div class="section-header">
@@ -150,9 +150,9 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
 
-        <!-- NOSSA EQUIPE SECTION -->
+        <!-- NOSSA EQUIPE SECTION 
         <section id="equipe" class="section bg-gray-900 border-t border-gray-700">
             <div class="container mx-auto px-6">
                 <div class="section-header">
@@ -160,31 +160,31 @@
                     <p class="section-subtitle">As mentes por trás do projeto LIGA JÁ.</p>
                 </div>
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
-                    <!-- Team Member 1 -->
+                    
                     <div class="text-center text-gray-300">
                         <img src="IMG/Foto_caio.jpeg" alt="Foto do integrante 1" class="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-violet-400 object-cover">
                         <h4 class="font-bold text-lg text-white">CAIO MENDONÇA</h4>
                         <p class="text-sm">Eng. de Software</p>
                     </div>
-                    <!-- Team Member 2 -->
+                    
                     <div class="text-center text-gray-300">
                         <img src="IMG/mateus.jpeg" alt="Foto do integrante 2" class="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-violet-400 object-cover">
                         <h4 class="font-bold text-lg text-white">MATEUS PRADO</h4>
                         <p class="text-sm">Eng. de Software</p>
                     </div>
-                    <!-- Team Member 3 -->
+                    
                     <div class="text-center text-gray-300">
                         <img src="IMG/vitor.jpeg" alt="Foto do integrante 3" class="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-violet-400 object-cover">
                         <h4 class="font-bold text-lg text-white">VITOR VITAL</h4>
                         <p class="text-sm">Eng. de Software</p>
                     </div>
-                    <!-- Team Member 4 -->
+                    
                     <div class="text-center text-gray-300">
                         <img src="IMG/mit.jpeg" alt="Foto do integrante 4" class="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-violet-400 object-cover">
                         <h4 class="font-bold text-lg text-white">MITSUO NAKAMURA</h4>
                         <p class="text-sm">Eng. de Software</p>
                     </div>
-                    <!-- Team Member 5 -->
+                    
                     <div class="text-center text-gray-300">
                         <img src="IMG/pedro.jpeg" alt="Foto do integrante 5" class="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-violet-400 object-cover">
                         <h4 class="font-bold text-lg text-white">PEDRO BUENO</h4>
@@ -192,9 +192,9 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <!-- SOBRE O PROJETO SECTION -->
+        <!-- SOBRE O PROJETO SECTION 
         <section id="projeto" class="section bg-gray-800 border-t border-gray-700">
             <div class="container mx-auto px-6">
                 <div class="section-header">
@@ -242,9 +242,67 @@
                     </div>
                 </div>
             </div>
+        </section>-->
+
+         <!-- DESCRIÇÃO MVP -->
+        <section id="telas_app" class="section bg-gray-800 border-t border-gray-700">
+            <div class="container mx-auto px-6">
+                <div class="section-header">
+                    <h2 class="section-title">MVP DO PROJETO</h2>
+                    <p class="section-subtitle">Essa é uma breve descrição do MVP (Produto minimo viavel) do projeto.</p>
+                </div>
+                <div class="max-w-6xl mx-auto bg-gray-900 p-8 rounded-xl shadow-lg">
+                    <p class="text-gray-300 leading-relaxed text-left md:text-center">
+                        O MVP do projeto LIGA JÁ foi criado para garantir que mulheres em situação de risco possam pedir ajuda de forma rápida e simples. Ele oferece apenas as funções essenciais para o acionamento imediato de socorro, permitindo realizar ligações emergenciais, como para o número 190 ou para um contato previamente configurado, além do envio automático de uma mensagem de alerta. A configuração é mínima e intuitiva, garantindo uso fácil mesmo em momentos de estresse. O sistema também registra acionamentos e contatos no banco de dados, utilizando apenas as entidades necessárias para o funcionamento básico. Assim, o MVP entrega uma solução funcional, direta e confiável para oferecer proteção imediata à usuária.
+                    </p>
+                 </div>
         </section>
 
-        <!-- IMPACTO SOCIAL SECTION -->
+        <!-- DIAGRAMA DE CLASSES SECTION -->
+        <section id="diagrama_caso_de_uso" class="section bg-gray-800 border-t border-gray-700">
+            <div class="container mx-auto px-6">
+                <div class="section-header">
+                    <h2 class="section-title">Diagrama de Caso de Uso</h2>
+                    <p class="section-subtitle">Visão geral das funções e interações principais do sistema.</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <img src="DOCS/diagrama_caso_de_uso.jpeg" alt="Diagrama de Classes de Uso" class="w-full rounded-xl shadow-2xl border border-gray-700 object-contain">
+            </div>
+        </section>
+
+        <!-- TELAS E PROTOTIPO -->
+        <section id="telas_app" class="section bg-gray-800 border-t border-gray-700">
+            <div class="container mx-auto px-6">
+                <div class="section-header">
+                    <h2 class="section-title">Telas do aplicativo</h2>
+                    <p class="section-subtitle">Prototipação das telas do aplicativo.</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <img src="DOCS/prototipo_do_sistema.png" alt="Prototipação da telas" class="w-full rounded-xl shadow-2xl border border-gray-700 object-contain">
+            </div>
+        </section>
+
+
+        <!-- diagrama der -->
+        <section id="der" class="section bg-gray-800 border-t border-gray-700">
+            <div class="container mx-auto px-6">
+                <div class="section-header">
+                    <h2 class="section-title">Diagrama Banco de Dados</h2>
+                    <p class="section-subtitle">Diagrama conceitual e Lógico do banco de dados do sistemas.</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <img src="DOCS/der_conceitual.png" alt="conceituaL" class="w-full rounded-xl shadow-2xl border border-gray-700 object-contain">
+                </div>
+                <br>
+                <div class="max-w-4xl mx-auto">
+                    <img src="DOCS/der_logico.png" alt="logico" class="w-full rounded-xl shadow-2xl border border-gray-700 object-contain">
+                </div>
+        </section>
+
+        <!-- IMPACTO SOCIAL SECTION 
         <section id="impacto" class="section bg-gray-900 border-t border-gray-700">
             <div class="container mx-auto px-6 text-center">
                  <div class="section-header">
@@ -257,7 +315,7 @@
                     </p>
                  </div>
             </div>
-        </section>
+        </section>-->
 
     </main>
 
