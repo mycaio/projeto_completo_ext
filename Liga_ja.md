@@ -1,61 +1,71 @@
 ---
-
 title: "Liga Já"
 draft: false
 language: pt-br
-featured_image: images/featured/featured-img-placeholder.png
-summary: Aplicativo móvel desenvolvido para auxiliar mulheres em situações de perigo através de chamadas e mensagens de emergência camufladas em uma calculadora funcional.
+featured_image: https://github.com/mycaio/projeto_completo_ext/blob/main/imagemPrincipal.jpeg
+summary: Aplicativo mobile disfarçado de calculadora para auxiliar mulheres em situações de perigo, permitindo chamadas de emergência e envio de localização de forma rápida e discreta.
 author: Unifil
 categories: Blog
-tags: ["ADS", "Kotlin", "Android", "Segurança", "Tecnologia", "Saúde", "Mobile"]
+tags: ["Kotlin", "Android", "Segurança", "Mobile", "Extensão", "Tecnologia", "Aplicativo", "Emergência"]
 linkandroid: https://ligajacalc.netlify.app
-linkios: Não disponível
+linkios: Disponível somente para Android
 linkweb: https://ligajacalc.netlify.app
-linkblog: https://ligajacalc.netlify.app
-linkvideo: https://github.com/mycaio/LigaJA003
-
+linkblog: https://github.com/mycaio/LigaJA003
+linkvideo: Em desenvolvimento
+-----------------------
 ---
-
 # Liga Já
+
+![Imagem principal do projeto](https://raw.githubusercontent.com/mycaio/projeto_completo_ext/main/imagemPrincipal.jpeg)!
 
 ## Sobre o Projeto
 
-O **Liga Já** é um aplicativo móvel desenvolvido em Kotlin para dispositivos Android com foco em auxiliar mulheres em situações de risco, como:
+O **Liga Já** é um aplicativo mobile desenvolvido em **Kotlin** para dispositivos Android, criado com o objetivo de auxiliar mulheres em situações de risco, como:
 
 * Agressão
 * Assédio
 * Violência
+* Perseguição
 * Situações de emergência
 
-O principal diferencial do projeto é sua aparência discreta. O aplicativo funciona visualmente como uma calculadora comum de celular, permitindo que ações de emergência sejam executadas sem chamar atenção.
+O aplicativo foi projetado para funcionar de forma discreta, utilizando como interface principal uma **calculadora funcional**, evitando suspeitas durante o uso.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Objetivo
+
+O principal objetivo do projeto é fornecer uma forma rápida, segura e discreta de:
+
+* Realizar ligações de emergência
+* Enviar mensagens automáticas de socorro
+* Compartilhar localização em tempo real
+* Acionar contatos confiáveis rapidamente
+
+Tudo isso sem que terceiros percebam que se trata de um aplicativo de segurança.
 
 ---
 
-# Objetivo
+## Tecnologias Utilizadas
 
-O objetivo do aplicativo é permitir que pedidos de ajuda sejam realizados de forma rápida, prática e “anônima”, utilizando sequências específicas de cálculos para acionar contatos de emergência, realizar ligações e enviar mensagens com localização em tempo real.
 
----
-
-# Tecnologias Utilizadas
-
-| Tecnologia      | Finalidade                      |
-| --------------- | ------------------------------- |
-| Kotlin          | Desenvolvimento Android         |
-| Android Studio  | Ambiente de desenvolvimento     |
-| WhatsApp API    | Envio de mensagens              |
+| Tecnologia        | Finalidade                        |
+| ----------------- | --------------------------------- |
+| Kotlin            | Desenvolvimento Android           |
+| Android Studio    | Ambiente de desenvolvimento       |
 | GPS/Localização | Compartilhamento de localização |
-| APK Android     | Distribuição do aplicativo      |
+| Intent Android    | Ligações telefônicas           |
+| APK Android       | Distribuição do aplicativo      |
 
 ---
 
 # Funcionalidades
 
-## Calculadora Camuflada
+## Calculadora Disfarçada
 
-A tela principal do aplicativo funciona exatamente como uma calculadora padrão de celular, realizando cálculos normalmente.
+A tela principal do aplicativo funciona exatamente como uma calculadora padrão de celular, permitindo:
 
-Essa abordagem foi criada para manter discrição em situações de risco.
+* Operações matemáticas básicas
+* Interface discreta
+* Uso normal sem levantar suspeitas
 
 ---
 
@@ -67,110 +77,161 @@ Ao digitar:
 111 +=
 ```
 
-o aplicativo abre uma área oculta de gerenciamento de contatos de emergência.
+O aplicativo abre a área secreta de gerenciamento de contatos de emergência.
 
 Nessa tela é possível:
 
 * Cadastrar contatos
 * Editar contatos
-* Excluir contatos
-* Configurar ações de emergência
+* Remover contatos
+* Definir ações de emergência
 
-Cada contato pode possuir:
+### Dados cadastrados
 
-| Campo                  | Descrição                           |
-| ---------------------- | ----------------------------------- |
-| Nome                   | Nome do contato                     |
-| Número                 | Telefone do contato                 |
-| Sequência de botões    | Código usado para ativar emergência |
-| Tipo de emergência     | Ligação ou mensagem + ligação       |
-| Mensagem personalizada | Texto opcional de socorro           |
+
+| Campo                  | Descrição                        |
+| ---------------------- | ---------------------------------- |
+| Nome                   | Nome do contato                    |
+| Número                | Telefone do contato                |
+| Sequência             | Sequência/cálculo de acionamento |
+| Tipo de emergência    | Ligação ou mensagem + ligação  |
+| Mensagem personalizada | Texto opcional de socorro          |
 
 ---
 
-# Ligações de Emergência
+## Ligação de Emergência
 
-O aplicativo possui comandos secretos que acionam chamadas automaticamente.
+Ao inserir determinadas sequências pré-definidas na calculadora, o aplicativo:
 
-Exemplo:
+* Abre automaticamente o aplicativo de telefone
+* Realiza a ligação imediatamente
+
+### Exemplo
 
 ```txt
 19*10=
 ```
 
-Essa sequência realiza automaticamente uma ligação para o:
+Resultado:
 
-* 190 — Polícia Militar
-
-Ao executar o cálculo, o aplicativo redireciona imediatamente para a tela de chamada do Android.
+* Realiza ligação para a Polícia Militar (190)
 
 ---
 
-# Mensagens de Emergência
+## Envio de Mensagens de Socorro
 
-Além das ligações, o aplicativo também pode:
+O aplicativo também permite:
 
-* Enviar mensagens automáticas
+* Enviar mensagens automáticas via WhatsApp
 * Compartilhar localização em tempo real
-* Acionar contatos via WhatsApp
+* Utilizar mensagens personalizadas
 
-A mensagem enviada contém:
+### A mensagem enviada contém:
 
-* Texto personalizado
-* Link automático da localização do usuário
+* Texto de socorro
+* Link da localização automática
+* Identificação rápida da emergência
 
 ---
 
 # Diferenciais do Projeto
 
-* Interface discreta
-* Fácil utilização
-* Ações rápidas de emergência
-* Compartilhamento automático de localização
-* Aparência de calculadora comum
-* Funcionamento intuitivo
+## Segurança Discreta
+
+O principal diferencial do **Liga Já** é sua aparência de calculadora comum, permitindo:
+
+* Uso sem chamar atenção
+* Acionamento silencioso
+* Rapidez em emergências
+
+---
+
+## Compartilhamento Automático de Localização
+
+Durante uma situação de risco, o sistema automaticamente:
+
+* Obtém a localização do dispositivo
+* Gera um link de localização
+* Envia para os contatos cadastrados
+
+---
+
+## Facilidade de Uso
+
+O sistema foi desenvolvido pensando em:
+
+* Simplicidade
+* Rapidez
+* Discrição
+* Eficiência em situações críticas
+
+---
+
+# Público-Alvo
+
+O aplicativo foi pensado principalmente para:
+
+* Mulheres em situação de vulnerabilidade
+* Pessoas que necessitam de acionamento rápido de emergência
+* Usuários que desejam uma ferramenta discreta de segurança
 
 ---
 
 # Disponibilidade
 
-O projeto foi desenvolvido exclusivamente para Android e disponibilizado em formato APK.
+## Plataforma
 
-| Plataforma | Disponibilidade |
-| ---------- | --------------- |
+
+| Plataforma | Disponibilidade  |
+| ---------- | ---------------- |
 | Android    | Disponível      |
-| iOS        | Não disponível  |
+| iOS        | Não disponível |
 
----
-
-# Equipe do Projeto
-
-| Participante    |
-| --------------- |
-| Caio Mendonça   |
-| Mitsou Nakamura |
-| Mateus Prado    |
+O projeto atualmente está disponível somente em formato APK para Android.
 
 ---
 
 # Links do Projeto
 
-## Portfólio / Download APK
+## Portfólio com APK
 
-https://ligajacalc.netlify.app
+Acesse o aplicativo através do link:
+
+👉 https://ligajacalc.netlify.app
 
 ---
 
-## GitHub
+## Repositório GitHub
 
-https://github.com/mycaio/LigaJA003
+Código-fonte disponível em:
+
+👉 https://github.com/mycaio/LigaJA003
+
+---
+
+# Participantes
+
+
+| Nome            |
+| --------------- |
+| Caio Mendonça  |
+| Mitsuo Nakamura |
+| Mateus Prado    |
+| Vitor Vital     |
 
 ---
 
 # Considerações Finais
 
-O projeto **Liga Já** busca utilizar a tecnologia como ferramenta de proteção e suporte em situações de risco, oferecendo uma solução discreta, acessível e rápida para acionamento de ajuda emergencial.
+O projeto **Liga Já** foi desenvolvido como uma iniciativa de extensão com foco em tecnologia aplicada à segurança e proteção de pessoas em situação de risco.
 
-O aplicativo foi pensado principalmente para aumentar a segurança de mulheres em momentos críticos, permitindo comunicação imediata sem levantar suspeitas.
+A proposta une:
+
+* Tecnologia
+* Discrição
+* Segurança
+* Acessibilidade
+
+Criando uma ferramenta simples, funcional e potencialmente capaz de auxiliar em momentos críticos.
 
 ---
